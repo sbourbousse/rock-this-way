@@ -7,8 +7,7 @@
     "start": "tsnode src/",
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc && node build/index.js",
-    "dev": "./node_modulestsc/nodemon/bin/nodemon.js -e ts  --exec \"npm run compile\"",
-    "postinstall": "npm run build"
+    "dev": "./node_modulestsc/nodemon/bin/nodemon.js -e ts  --exec \"npm run compile\""
   },
   "repository": {
     "type": "git",
