@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 
 const prefix = 'mongodb+srv'
 const server = 'sylvain:tiy9mcn@cluster0.0x34i.mongodb.net';
-const database = 'rockthisway';
+const database = 'gameDb';
 const options = '?retryWrites=true&w=majority'
 
 mongoose.connect(`${prefix}://${server}/${database}${options}`)
