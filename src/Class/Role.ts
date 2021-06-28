@@ -2,6 +2,14 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 import { checkFields } from "../functions/utils"
 
+const roleSchema = Schema({
+    name: String
+})
+
+const roleModel = mongoose.model("Role", roleSchema)
+
+
+
 export class Role {
     name: string;
     
@@ -17,15 +25,12 @@ export class Role {
     }
 
     static toMongooseSchema() {
-        const roleSchema = Schema({
-            name: String
-
-        })
+       
         return roleSchema;
     }
 
     static toMongooseModel(): any {
-        return mongoose.model("Role", Role.toMongooseSchema())
+        return roleModel;
     }
 
     save(cb: any) {
