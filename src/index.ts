@@ -3,6 +3,7 @@ import express from 'express';
 const mongoose = require("mongoose")
 const user = require('./routes/users')
 const bodyParser = require('body-parser');
+var cors = require('cors')
 const app = express()
 const port = process.env.PORT || 3000;
 
@@ -11,6 +12,12 @@ app.use(bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
+
+var corsOptions = {
+  origin: '*'
+}
+
+app.use(cors(corsOptions));
 
 
 const prefix = 'mongodb+srv'
