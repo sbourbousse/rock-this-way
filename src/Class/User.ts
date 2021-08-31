@@ -24,6 +24,7 @@ export class User {
     email: string;
     password: string;
     verified: boolean;
+    gameSave: Object;
     roles: Role[] = [];
 
     constructor(_name: string, _email: string, _password: string, _verified: boolean = false) {
@@ -31,6 +32,11 @@ export class User {
         this.email = _email;
         this.password = _password;
         this.verified = _verified;
+        this.gameSave = {};
+    }
+
+    setGameSave(gameSave: Object) {
+        this.gameSave = gameSave;
     }
 
     toObject() {
@@ -39,7 +45,7 @@ export class User {
             email: this.email,
             password: this.password,
             verified: this.verified,
-            game: [{}],
+            game: this.gameSave,
             roles: this.roles
         }
     }
